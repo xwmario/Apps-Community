@@ -17,6 +17,10 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
+    - name: Register {{pgrole}} local folder
+      shell: 'cat /var/plexguide/channelsdvr.folder'
+      register: channelsdvrfolder
+
     # LABELS ######################################################################
     - name: 'Adding Traefik'
       set_fact:
@@ -39,7 +43,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/channels-dvr'
-          - '/MAP TO A PATH WITH STORAGE FOR RECORDING'
+          - '{{channelsdvrfolder.stdout}}:/shares/DVR'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
