@@ -67,7 +67,10 @@
         env: '{{pg_env}}'
         restart_policy: always
         devices: "{{ '/dev/dri:/dev/dri' if dev_dri.stat.exists == True | default(false) else omit }}"
-        network_mode: host
+        networks:
+          - name: plexguide
+            aliases:
+              - '{{pgrole}}'
         state: stopped
         labels: '{{pg_labels}}'
     # OTHER ######################################################################
