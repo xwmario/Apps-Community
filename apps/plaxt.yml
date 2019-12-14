@@ -48,7 +48,7 @@
           PGID: '1000'
           TRAKT_ID: ''
           TRAKT_SECRET: ''
-          ALLOWED_HOSTNAMES: '{{pgrole}}.{{domain.stdout}}{{tldset}}'
+          ALLOWED_HOSTNAMES: 'https://{{pgrole}}.{{domain.stdout}}'
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
       docker_container:
