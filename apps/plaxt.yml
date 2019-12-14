@@ -17,6 +17,14 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
+    - name: Register Trakt.tv ID
+      shell: 'cat /var/plexguide/trakt.id'
+      register: traktid
+
+    - name: Register Trakt.tv Secret
+      shell: 'cat /var/plexguide/trakt.sec'
+      register: traktsec
+
     # LABELS ######################################################################
     - name: 'Adding Traefik'
       set_fact:
@@ -46,8 +54,8 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          TRAKT_ID: ''
-          TRAKT_SECRET: ''
+          TRAKT_ID: '{{traktid.stdout}}'
+          TRAKT_SECRET: '{{traktsec.stdout}}'
           ALLOWED_HOSTNAMES: 'https://{{pgrole}}.{{domain.stdout}}'
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
@@ -66,4 +74,3 @@
               - '{{pgrole}}'
         state: started
         labels: '{{pg_labels}}'
-
