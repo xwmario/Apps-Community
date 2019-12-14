@@ -17,7 +17,7 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
-    - name: Register {{pgrole}} local folder
+    - name: `Register {{pgrole}} local folder`
       shell: 'cat /var/plexguide/channelsdvr.folder'
       register: channelsdvrfolder
 
@@ -78,6 +78,3 @@
         state: stopped
         labels: '{{pg_labels}}'
     # OTHER ######################################################################
-
-
-
