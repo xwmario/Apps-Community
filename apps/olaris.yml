@@ -42,7 +42,6 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt/unionfs:/var/media'
-          - ' '
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
