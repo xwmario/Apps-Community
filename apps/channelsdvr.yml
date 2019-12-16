@@ -11,7 +11,7 @@
         pgrole: 'channelsdvr'
         intport: '8089'
         extport: '8089'
-        image: 'fancybits/channels-dvr:latest'
+        image: 'fancybits/channels-dvr:tve'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
