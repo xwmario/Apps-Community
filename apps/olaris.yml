@@ -44,7 +44,7 @@
           - '/mnt/unionfs:/var/media'
           - '/opt/appdata/{{pgrole}}/:/home/olaris/.config/rclone:ro'
           
-    - name: 'Copy a readable rClone file to {{pgrole}} appdata'
+    - name: 'Copy a readable rClone file to appdata'
       copy:
       src: /opt/appdata/plexguide/rclone.conf
       dest: /opt/appdata/olaris/rclone.conf
