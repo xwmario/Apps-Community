@@ -46,11 +46,11 @@
           
     - name: 'Copy a readable rClone file to appdata'
       copy:
-      src: /opt/appdata/plexguide/rclone.conf
-      dest: /opt/appdata/olaris/rclone.conf
-      owner: 1000
-      group: 1000
-      mode: 0644    
+        src: /opt/appdata/plexguide/rclone.conf
+        dest: /opt/appdata/olaris/rclone.conf
+        owner: 1000
+        group: 1000
+        mode: 0644    
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
@@ -81,4 +81,3 @@
               - '{{pgrole}}'
         state: started
         labels: '{{pg_labels}}'
-
