@@ -42,7 +42,7 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt/unionfs:/var/media'
-          - '/opt/appdata/plexguide/rclone.conf:/root/.config/rclone:ro'
+          - '/opt/appdata/plexguide/rclone.conf:/home/olaris/.rclone.conf:ro'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
