@@ -48,9 +48,9 @@
       copy:
         src: /opt/appdata/plexguide/rclone.conf
         dest: /opt/appdata/olaris/rclone.conf
-        owner: 1000
-        group: 1000
-        mode: 0644    
+        owner: '1000'
+        group: '1000'
+        mode: '0444'   
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
