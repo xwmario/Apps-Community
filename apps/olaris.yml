@@ -38,11 +38,11 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/root/.config/olaris'
+          - '/opt/appdata/{{pgrole}}:/home/olaris/.config/olaris'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt/unionfs:/var/media'
-          - '/opt/appdata/plexguide/rclone.conf:/root/.config/rclone/rclone.conf:ro'
+          - '/opt/appdata/plexguide/:/home/olaris/.config/rclone:ro'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
