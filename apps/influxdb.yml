@@ -19,7 +19,7 @@
 
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'influxdb
+        pgrole: 'influxdb'
         intport: '8086'
         extport: '8086'
         image: 'influxdb'
