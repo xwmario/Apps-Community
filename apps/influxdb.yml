@@ -69,8 +69,7 @@
             aliases:
               - '{{pgrole}}'
         state: started
-        labels: '{{pg_labels}}'
-
+        
     ####  CONFIG  ##########
     - name: 'Waiting for {{pgrole}} to initialize'
       wait_for:
