@@ -6,21 +6,12 @@
   gather_facts: false
   tasks:
     # FACTS #######################################################################
-    - stat: path=/opt/appdata/varken/varken.example.ini
-      register: varken_result
-
-    - debug:
-        msg: "File doesnt exist"
-      when: varken_result.stat.exists == False
-
-    - debug:
-        msg: "File does exist, we can continue"
-      when: varken_result.stat.exists == True
-
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'varken'
-        image: 'boerderij/varken:develop'
+        pgrole: 'grafana'
+        intport: '3000'
+        extport: '3000'
+        image: 'grafana/grafana'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -32,10 +23,27 @@
       register: confcheck
 
     # LABELS ######################################################################
+    - name: 'Adding Traefik'
+      set_fact:
+        pg_labels:
+          traefik.enable: 'true'
+          traefik.port: '{{intport}}'
+          traefik.frontend.auth.forward.address: '{{gauth}}'
+          traefik.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}}{{tldset}}{{cname}}'
+          traefik.frontend.headers.SSLHost: '{{domain.stdout}}'
+          traefik.frontend.headers.SSLRedirect: 'true'
+          traefik.frontend.headers.STSIncludeSubdomains: 'true'
+          traefik.frontend.headers.STSPreload: 'true'
+          traefik.frontend.headers.STSSeconds: '315360000'
+          traefik.frontend.headers.browserXSSFilter: 'true'
+          traefik.frontend.headers.contentTypeNosniff: 'true'
+          traefik.frontend.headers.customResponseHeaders: 'X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex'
+          traefik.frontend.headers.forceSTSHeader: 'true'
+
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}:/var/lib/grafana'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
@@ -62,4 +70,16 @@
               - '{{pgrole}}'
         state: started
         labels: '{{pg_labels}}'
+
+    #####  SET PERMS REQUIRED #######
+    - name: 'Setting Permissions'
+      shell: 'chown 472 -R /opt/appdata/{{pgrole}} && chgrp 472 -R /opt/appdata/{{pgrole}}'
+    - name: 'Stopping {{pgrole}} to set permissions'
+      docker_container:
+        name: '{{pgrole}}'
+        state: stopped
+    - name: 'Starting {{pgrole}}'
+      docker_container:
+        name: '{{pgrole}}'
+        state: started
 
