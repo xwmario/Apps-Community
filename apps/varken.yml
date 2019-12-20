@@ -20,6 +20,8 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'varken'
+        intport: '80'
+        extport: '5985'
         image: 'boerderij/varken:develop'
 
     # CORE (MANDATORY) ############################################################
@@ -51,6 +53,8 @@
         name: '{{pgrole}}'
         image: '{{image}}'
         pull: yes
+        published_ports:
+          - '{{ports.stdout}}{{extport}}:{{intport}}'
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
