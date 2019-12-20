@@ -79,4 +79,4 @@
     - name: 'Generating config'
       shell: docker run --rm influxdb influxd config > /opt/appdata/{{pgrole}}/influxdb.conf
       args:
-      create:  /opt/appdata/{{pgrole}}/influxdb.conf
+      touch:  /opt/appdata/{{pgrole}}/influxdb.conf
