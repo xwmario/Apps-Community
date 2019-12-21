@@ -50,13 +50,13 @@
         pg_volumes:
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}/telegraf.conf:/etc/telegraf/telegraf.conf'
+          - '/opt/appdata/{{pgrole}}/:/etc/telegraf/'
           - '/var/run/docker.sock:/var/run/docker.sock'
           - '/:/rootfs'
           - '/proc:/rootfs/proc'
           - '/sys:/rootfs/sys'
           - '/var/run/utmp:/var/run/utmp'
-    #     - '/opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs'
+    #     - /opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:

@@ -9,7 +9,7 @@
   register: copycheck
 
 - name: 'Copying config'
-  shell: 'cp -r /opt/coreapps/apps/templates/telegraf/telegraf.conf /opt/appdata/telegraf/'
+  shell: 'cp -r /opt/communityapps/apps/templates/telegraf/telegraf.conf /opt/appdata/telegraf/telegraf.conf'
   when: copycheck.stat.exists
 
 # scripts permissions
