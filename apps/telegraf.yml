@@ -49,10 +49,9 @@
           - '/opt/appdata/{{pgrole}}/telegraf.conf:/etc/telegraf/telegraf.conf'
           - '/var/run/docker.sock:/var/run/docker.sock'
           - '/:/rootfs'
-          - '/sys:/rootfs/sys'
           - '/proc:/rootfs/proc'
           - '/var/run/utmp:/var/run/utmp'
-          - '/opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs'
+    #     - '/opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
