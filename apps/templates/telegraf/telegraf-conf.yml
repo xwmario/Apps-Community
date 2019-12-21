@@ -3,14 +3,8 @@
   with_items:
     - '/opt/appdata/telegraf/'
 
-- name: 'Check if Templates Exist for {{pgrole}}'
-  stat:
-    path: '/opt/coreapps/apps/templates/{{pgrole}}/telegraf.conf'
-  register: copycheck
-
 - name: 'Copying config'
   shell: 'cp -r /opt/communityapps/apps/templates/telegraf/telegraf.conf /opt/appdata/telegraf/telegraf.conf'
-  when: copycheck.stat.exists
 
 # scripts permissions
 - name: 'Setting permissions for {{pgrole}}'

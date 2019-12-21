@@ -17,12 +17,12 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
-    - name: 'Checking for existing app data'
+    - name: 'Checking for existing telegraf.conf'
       stat:
         path: '/opt/appdata/{{pgrole}}/telegraf.conf'
       register: stat_result
 
-    - name: 'Checking for existing app data'
+    - name: 'Clone telegraf.conf for first start'
       include_tasks: '/opt/communityapps/apps/templates/telegraf/telegraf-conf.yml'
       when: stat_result.stat.exists == False
       ignore_errors: yes
