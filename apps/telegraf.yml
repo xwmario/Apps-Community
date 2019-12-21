@@ -50,6 +50,7 @@
           - '/var/run/docker.sock:/var/run/docker.sock'
           - '/:/rootfs'
           - '/proc:/rootfs/proc'
+          - '/sys:/rootfs/sys'
           - '/var/run/utmp:/var/run/utmp'
     #     - '/opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs'
 
