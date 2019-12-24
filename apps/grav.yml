@@ -9,9 +9,9 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'grav'
-        intport: '80'
+        intport: '8080'
         extport: '8000'
-        image: 'grav:latest'
+        image: 'treatys/grav-cms'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -38,9 +38,15 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/var/www/html:cached'
+          - '/opt/appdata/{{pgrole}}:/var/www/html/user/themes/'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
+          - '/opt/appdata/{{pgrole}}/.data/config::/var/www/html/user/config'
+          - '/opt/appdata/{{pgrole}}/.data/data:/var/www/html/user/data'
+          - '/opt/appdata/{{pgrole}}/.data/images:/var/www/html/user/images'
+          - '/opt/appdata/{{pgrole}}/.data/accounts:/var/www/html/user/accounts'
+          - '/opt/appdata/{{pgrole}}/.data/pages:/var/www/html/user/pages'
+          - '/opt/appdata/{{pgrole}}/.data/plugins:/var/www/html/user/plugins'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
