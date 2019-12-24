@@ -10,7 +10,7 @@
       set_fact:
         pgrole: 'grav'
         intport: '8080'
-        extport: '8000'
+        extport: '8002'
         image: 'getmedia/grav-cms'
 
     # CORE (MANDATORY) ############################################################
