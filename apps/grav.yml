@@ -53,6 +53,9 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          GRAV_VERSION: 'latest'
+          GRAV_ADMIN: 'true'
+          
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
