@@ -11,7 +11,7 @@
         pgrole: 'grav'
         intport: '8080'
         extport: '8000'
-        image: 'treatys/grav-cms'
+        image: 'getmedia/grav-cms'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
