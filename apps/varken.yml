@@ -46,6 +46,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          VRKN_GLOBAL_MAXMIND_LICENSE_KEY: 'XXXXXXXXXXX'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
