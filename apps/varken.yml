@@ -24,6 +24,10 @@
         extport: '5985'
         image: 'boerderij/varken:develop'
 
+    - name: Register VRKN_GLOBAL_MAXMIND_LICENSE_KEY
+      shell: 'cat /var/plexguide/varken/geoip.key'
+      register: geoiplzkey
+
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
@@ -46,7 +50,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          VRKN_GLOBAL_MAXMIND_LICENSE_KEY: 'XXXXXXXXXXX'
+          VRKN_GLOBAL_MAXMIND_LICENSE_KEY: '{{ geoiplzkey }}'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
