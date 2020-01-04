@@ -101,6 +101,7 @@
           - name: plexguide
             aliases:
               - '{{pgrole}}'
+            ipv4_address: 172.18.0.55    
         state: started
         labels: '{{pg_labels}}'
 
