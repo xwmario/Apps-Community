@@ -95,6 +95,7 @@
         restart_policy: unless-stopped
         devices:
           - '/dev/net/tun:/dev/net/tun:rwm'
+        purge_networks: yes
         capabilities:
           - NET_ADMIN
         networks:
