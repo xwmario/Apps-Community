@@ -13,17 +13,13 @@
 
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'qbittorrent-vpn'
+        pgrole: 'qbittorrentvpn'
         intport: '8080'
         extport: '8098'
         intport2: '8118'
         extport2: '8118'
-        dnsserver1: '1.1.1.1'
-        dnsserver2: '84.200.69.80'
-        dnsserver3: '37.235.1.174'
-        dnsserver4: '185.121.177.177'
-        puid: '1000'
-        pgid: '1000'
+        intport3: '6881'
+        extport3: '6881'
         image: 'binhex/arch-qbittorrentvpn:latest'
 
     # CORE (MANDATORY) #############################################################
@@ -59,13 +55,14 @@
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
           - '{{path.stdout}}:{{path.stdout}}'
-          - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}/config:/config'
+          - '/opt/appdata/{{pgrole}}/data:/data'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
-          PUID: '{{puid}}'
-          PGID: '{{pgid}}'
+          PUID: '1000'
+          PGID: '1000'
           UMASK: '000'
           VPN_ENABLED: 'no'
           VPN_USER: 'username'
@@ -74,8 +71,8 @@
           VPN_OPTIONS: ''
           STRICT_PORT_FORWARD: 'no'
           ENABLE_PRIVOXY: 'no'
-          LAN_NETWORK: '127.20.0.0/16'
-          NAME_SERVERS: '{{dnsserver1}},{{dnsserver2}},{{dnsserver3}},{{dnsserver4}}'
+          LAN_NETWORK: '172.18.0.0/16'
+          NAME_SERVERS: '209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1'
           DEBUG: 'false'
           WEBUI_PORT: '{{intport}}'
 
@@ -93,16 +90,12 @@
         published_ports:
           - '{{ports.stdout}}{{extport}}:{{intport}}'
           - '{{ports.stdout}}{{extport2}}:{{intport2}}'
+          - '{{ports.stdout}}{{extport3}}:{{intport3}}'
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
         devices:
           - '/dev/net/tun:/dev/net/tun:rwm'
-        dns_servers:
-          - '{{dnsserver1}}'
-          - '{{dnsserver2}}'
-          - '{{dnsserver3}}'
-          - '{{dnsserver4}}'
         capabilities:
           - NET_ADMIN
         networks:
