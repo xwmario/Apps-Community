@@ -168,19 +168,19 @@
         line: '"move_completed": True,'
         state: present
 
-    - name: Setting extractor folder
-      lineinfile:
-        path: '/opt/appdata/{{pgrole}}/plugins/extractor.conf'
-        regexp: '"use_name_folder".*'
-        line: '"use_name_folder": True,'
-        state: present
+ #   - name: Setting extractor folder
+ #     lineinfile:
+ #       path: '/opt/appdata/{{pgrole}}/plugins/extractor.conf'
+ #       regexp: '"use_name_folder".*'
+ #       line: '"use_name_folder": True,'
+ #       state: present
 
-    - name: Setting extractor
-      lineinfile:
-        path: '/opt/appdata/{{pgrole}}/plugins/extractor.conf'
-        regexp: '"extract_path".*'
-        line: '"extract_path": "{{path.stdout}}/downloads/{{pgrole}}"'
-        state: present
+ #   - name: Setting extractor
+ #     lineinfile:
+ #       path: '/opt/appdata/{{pgrole}}/plugins/extractor.conf'
+ #       regexp: '"extract_path".*'
+ #       line: '"extract_path": "{{path.stdout}}/downloads/{{pgrole}}"'
+ #       state: present
 
     # FIRST TIME CONFIGURATION ####################################################
     - name: 'Configuring {{pgrole}} for first time use'
