@@ -12,11 +12,15 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'deluge-vpn'
+        pgrole: 'delugevpn'
         intport: '8112'
         extport: '8112'
         intport2: '8118'
         extport2: '8118'
+        intport3: '58846'
+        extport3: '58846'
+        intport4: '58946'
+        extport4: '58946'
         image: 'binhex/arch-delugevpn'
 
     # CORE (MANDATORY) ############################################################
@@ -56,6 +60,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}/data:/data'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
@@ -64,13 +69,19 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          VPN_ENABLED: 'yes'
-          VPN_USER: vpnuser
-          VPN_PASS: vpnpass
-          VPN_PROV: custom
+          VPN_ENABLED: 'no'
+          VPN_USER: 'vpnuser'
+          VPN_PASS: 'vpnpass'
+          VPN_PROV: 'pia|airvpn|custom'
           ENABLE_PRIVOXY: 'no'
           STRICT_PORT_FORWARD: 'no'
-          LAN_NETWORK: 192.168.1.1/24
+          LAN_NETWORK: '172.18.0.0/16'
+          UMASK: '000'
+          NAME_SERVERS: '209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1'
+          DELUGE_DAEMON_LOG_LEVEL: 'info'
+          DELUGE_WEB_LOG_LEVEL: 'info'
+          DEBUG: 'false'
+
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
@@ -81,13 +92,21 @@
         published_ports:
           - '{{ports.stdout}}{{extport}}:{{intport}}'
           - '{{ports.stdout}}{{extport2}}:{{intport2}}'
+          - '{{ports.stdout}}{{extport3}}:{{intport3}}'
+          - '{{ports.stdout}}{{extport4}}:{{intport4}}'
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
+        devices:
+          - '/dev/net/tun:/dev/net/tun:rwm'
+        purge_networks: yes
+        capabilities:
+          - NET_ADMIN
         networks:
           - name: plexguide
             aliases:
               - '{{pgrole}}'
+            ipv4_address: 172.18.0.56
         state: started
         labels: '{{pg_labels}}'
 
