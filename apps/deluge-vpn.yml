@@ -21,7 +21,7 @@
         extport3: '58846'
         intport4: '58946'
         extport4: '58946'
-        image: 'binhex/arch-delugevpn:1.3.15_14_gb8e5ebe82-1-01'
+        image: 'binhex/arch-delugevpn:1.3.15_18_ge050905b2-1-04'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job for {{pgrole}}'
@@ -61,7 +61,7 @@
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
           - '/opt/appdata/{{pgrole}}/data:/data'
-          - '/opt/appdata/{{pgrole}}:/openvpn'
+          - '/opt/appdata/{{pgrole}}/openvpn:/config/openvpn'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
@@ -114,7 +114,7 @@
     # CONFIGURATION ###########################################################
     - name: 'Waiting for {{pgrole}} to initialize'
       wait_for:
-        timeout: 30
+        timeout: 10
 
     - name: Stopping {{pgrole}}
       docker_container:
