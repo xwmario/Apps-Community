@@ -8,9 +8,13 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'open-vpn'
+        pgrole: 'openvpn'
         intport: '943'
         extport: '943'
+        intport2: '9443'
+        extport2: '9443'
+        intport3: '1194'
+        extport3: '1194/udp'
         image: 'linuxserver/openvpn-as'
 
     # CORE (MANDATORY) ############################################################
@@ -38,7 +42,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/name of folder'
+          - '/opt/appdata/{{pgrole}}:/config'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
@@ -56,9 +60,13 @@
         pull: yes
         published_ports:
           - '{{ports.stdout}}{{extport}}:{{intport}}'
+          - '{{ports.stdout}}{{extpor2t}}:{{intport2}}'
+          - '{{ports.stdout}}{{extport3}}:{{intport3}}'
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
+        capabilities:
+          - NET_ADMIN
         networks:
           - name: plexguide
             aliases:
