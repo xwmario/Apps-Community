@@ -161,12 +161,12 @@
         line: '"torrentfiles_location": "{{path.stdout}}/torrent",'
         state: present
 
-    - name: Setting torrent watch directory
-      lineinfile:
-        path: '/opt/appdata/{{pgrole}}/core.conf'
-        regexp: '"autoadd_location".*'
-        line: '"autoadd_location": "{{path.stdout}}/torrent/watch",'
-        state: present
+#    - name: Setting torrent watch directory
+#      lineinfile:
+#        path: '/opt/appdata/{{pgrole}}/core.conf'
+#        regexp: '"autoadd_location".*'
+#        line: '"autoadd_location": "{{path.stdout}}/torrent/watch",'
+#        state: present
 
     - name: Setting move_completed
       lineinfile:
