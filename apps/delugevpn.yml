@@ -76,7 +76,7 @@
           VPN_PROV: 'pia|airvpn|custom'
           ENABLE_PRIVOXY: 'no'
           STRICT_PORT_FORWARD: 'no'
-          LAN_NETWORK: '172.18.0.0/16'
+          LAN_NETWORK: '172.17.0.0/16'
           UMASK: '000'
           NAME_SERVERS: '209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1'
           DELUGE_DAEMON_LOG_LEVEL: 'info'
@@ -107,7 +107,7 @@
           - name: plexguide
             aliases:
               - '{{pgrole}}'
-            ipv4_address: 172.18.0.56
+            ipv4_address: 172.17.0.56
         state: started
         labels: '{{pg_labels}}'
 
