@@ -61,7 +61,7 @@
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
           - '/opt/appdata/{{pgrole}}/data:/data'
-          - '/opt/appdata/{{pgrole}}:/openvpn'
+          - '/opt/appdata/{{pgrole}}/openvpn:/config/openvpn'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
