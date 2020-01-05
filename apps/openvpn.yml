@@ -14,7 +14,7 @@
         intport2: '9443'
         extport2: '9443'
         intport3: '1194'
-        extport3: '1194/udp'
+        extport3: '1194'
         image: 'linuxserver/openvpn-as'
 
     # CORE (MANDATORY) ############################################################
@@ -61,7 +61,7 @@
         published_ports:
           - '{{ports.stdout}}{{extport}}:{{intport}}'
           - '{{ports.stdout}}{{extpor2t}}:{{intport2}}'
-          - '{{ports.stdout}}{{extport3}}:{{intport3}}'
+          - '{{ports.stdout}}{{extport3}}:{{intport3}}/udp'
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
