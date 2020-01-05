@@ -133,7 +133,7 @@
         regexp: '"enabled_plugins".*'
         replace: '"enabled_plugins": ["Extractor", "Label"],'
         
-   - name: Setting plugins directory
+    - name: Setting plugins directory
       lineinfile:
        path: '/opt/appdata/{{pgrole}}/core.conf'
        regexp: '"plugins_location".*'
