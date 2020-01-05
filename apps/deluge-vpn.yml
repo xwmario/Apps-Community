@@ -114,7 +114,7 @@
     # CONFIGURATION ###########################################################
     - name: 'Waiting for {{pgrole}} to initialize'
       wait_for:
-        timeout: 30
+        timeout: 10
 
     - name: Stopping {{pgrole}}
       docker_container:
