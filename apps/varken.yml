@@ -50,7 +50,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          VRKN_GLOBAL_MAXMIND_LICENSE_KEY: '{{ geoiplzkey }}'
+          VRKN_GLOBAL_MAXMIND_LICENSE_KEY: '{{ geoiplzkey.stdout }}'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
