@@ -169,8 +169,8 @@
         state: started
 
     - name: 'Waiting 30 seconds for {{pgrole}} to initialize'
-        wait_for:
-          timeout: 30
+      wait_for:
+        timeout: 30
 
     - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer.'
       docker_container:
