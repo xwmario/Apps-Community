@@ -164,8 +164,12 @@
         pull: yes
         volumes: '{{pg_volumes2}}'
         env: '{{pg_env2}}'
+        networks:
+          - name: plexguide
+            aliases:
+              - '{{pgrole2}}'
         links:
-          - '{{pgrole}}:transmissionvpn'
+          - transmissionvpn
         restart_policy: unless-stopped
         state: started
 
