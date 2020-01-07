@@ -169,14 +169,14 @@
         restart_policy: unless-stopped
         state: started
 
-    - name: 'Waiting 30 seconds for {{pgrole}} to initialize'
-      wait_for:
-        timeout: 30
+#    - name: 'Waiting 30 seconds for {{pgrole}} to initialize'
+#      wait_for:
+#        timeout: 30
 
     - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer.'
       docker_container:
         name: '{{pgrole}}'
         state: stopped
 
-        when: not datacheck.stat.exists
+#        when: not datacheck.stat.exists
 ##PTS-Community
