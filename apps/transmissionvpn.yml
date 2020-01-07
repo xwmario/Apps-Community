@@ -165,7 +165,7 @@
         volumes: '{{pg_volumes2}}'
         env: '{{pg_env2}}'
         links:
-          - '{{pgrole2}}:transmissionvpn'
+          - '{{pgrole}}:transmissionrss'
         restart_policy: unless-stopped
         state: started
 
