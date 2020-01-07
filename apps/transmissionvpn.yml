@@ -24,9 +24,6 @@
     - name: 'Including folders for {{pgrole}}'
       include_tasks: '/opt/communityapps/apps/_downloaders.yml'
 
-    - name: 'Including plugins for {{pgrole}}'
-      include_tasks: '/opt/communityapps/apps/_plugins.yml'
-
     - name: 'Checking for existing appdata for {{pgrole}}'
       stat:
         path: /opt/appdata/{{pgrole}}/
