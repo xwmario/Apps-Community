@@ -172,7 +172,7 @@
             aliases:
               - '{{pgrole2}}'
         links:
-          - {{pgrole2}}:transmission
+          - '{{pgrole2}}':transmission
         restart_policy: unless-stopped
         state: started
 
