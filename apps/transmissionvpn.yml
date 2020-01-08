@@ -171,8 +171,8 @@
           - name: plexguide
             aliases:
               - '{{pgrole2}}'
-        links:
-          - transmissionvpn
+ #       links:
+ #         - transmissionvpn
         restart_policy: unless-stopped
         state: started
 
