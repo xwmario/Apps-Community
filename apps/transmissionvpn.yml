@@ -12,7 +12,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'transmissionvpn'
+        pgrole: 'transmission'
         pgrole2: 'transmissionrss'
         intport: '9091'
         extport: '9091'
@@ -171,8 +171,8 @@
           - name: plexguide
             aliases:
               - '{{pgrole2}}'
- #       links:
- #         - transmissionvpn
+        links:
+          - {{pgrole2}}:transmission
         restart_policy: unless-stopped
         state: started
 
