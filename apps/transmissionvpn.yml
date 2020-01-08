@@ -91,7 +91,7 @@
           TRANSMISSION_BLOCKLIST_URL: 'http://john.bitsurge.net/public/biglist.p2p.gz'
           TRANSMISSION_DHT_ENABLED: 'false'
           TRANSMISSION_HOME: '/config/home'
-          TRANSMISSION_RPC_AUTHENTICATION_REQUIRED: 'true'
+          TRANSMISSION_RPC_AUTHENTICATION_REQUIRED: 'false'
 #          TRANSMISSION_RPC_HOST_WHITELIST: '127.0.0.1'
           TRANSMISSION_RPC_PORT: '{{intport}}'
           TRANSMISSION_UMASK: '000'
