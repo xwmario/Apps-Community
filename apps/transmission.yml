@@ -160,30 +160,29 @@
           shell: 'touch /opt/appdata/{{pgrole}}/rss/transmission-rss.conf && chown -R 1000:1000 /opt/appdata/{{pgrole}}/rss/ && echo see https://git.io/fhAm2 to configure > /opt/appdata/{{pgrole}}/rss/transmission-rss.conf'
       when: not cfgcheck.stat.exists
 
-    - name: 'Deploying {{pgrole2}}'
-      docker_container:
-        name: '{{pgrole2}}'
-        image: '{{image2}}'
-        pull: yes
-        volumes: '{{pg_volumes2}}'
-        env: '{{pg_env2}}'
-        networks:
-          - name: plexguide
-            aliases:
-              - '{{pgrole2}}'
-        links:
-          - '{{pgrole}}:transmission'
-        restart_policy: unless-stopped
-        state: started
+#    - name: 'Deploying {{pgrole2}}'
+#      docker_container:
+#        name: '{{pgrole2}}'
+#        image: '{{image2}}'
+#        pull: yes
+#        volumes: '{{pg_volumes2}}'
+#        env: '{{pg_env2}}'
+#        networks:
+#          - name: plexguide
+#            aliases:
+#              - '{{pgrole2}}'
+#        links:
+#          - '{{pgrole}}:transmission'
+#        restart_policy: unless-stopped
+#        state: started
 
     - name: 'Waiting 30 seconds for {{pgrole}} to initialize'
       wait_for:
         timeout: 30
 
-    - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer.'
+    - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer. See Wiki for adding RSS Plugin'
       docker_container:
         name: '{{pgrole}}'
         state: stopped
 
-#        when: not datacheck.stat.exists
 ##PTS-Community
