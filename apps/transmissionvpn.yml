@@ -87,7 +87,6 @@
           OPENVPN_OPTS: '--inactive 3600 --ping 10 --ping-exit 60'
           LOCAL_NETWORK: '192.168.0.0/24'
           UMASK_SET: '000'
-          HEALTH_CHECK_HOST: 'duckduckgo.com'
           TRANSMISSION_BLOCKLIST_ENABLED: 'true'
           TRANSMISSION_BLOCKLIST_URL: 'http://john.bitsurge.net/public/biglist.p2p.gz'
           TRANSMISSION_DHT_ENABLED: 'false'
