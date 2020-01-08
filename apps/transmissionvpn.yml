@@ -79,7 +79,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          CREATE_TUN_DEVICE: 'false'
+          CREATE_TUN_DEVICE: 'true'
           OPENVPN_PROVIDER: 'VPN_PROVIDER'
           OPENVPN_USERNAME: 'VPN_USER'
           OPENVPN_PASSWORD: 'VPN_PASS'
