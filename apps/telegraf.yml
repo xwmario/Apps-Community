@@ -56,7 +56,7 @@
           - '/proc:/rootfs/proc'
           - '/sys:/rootfs/sys'
           - '/var/run/utmp:/var/run/utmp'
-    #     - /opt/appdata/{{pgrole}}/mibs:/etc/telegraf/mibs
+          - '/var/plexguide/logs:/logs/'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
