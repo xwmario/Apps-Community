@@ -78,9 +78,9 @@
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
-        cap_add:
+        capabilities:
           - SYS_PTRACE
-        security_opt:
+        security_opts:
           - apparmor:unconfined
         networks:
           - name: plexguide
