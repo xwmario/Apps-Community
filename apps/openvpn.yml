@@ -67,10 +67,7 @@
         restart_policy: unless-stopped
         capabilities:
           - NET_ADMIN
-        networks:
-          - name: plexguide
-            aliases:
-              - '{{pgrole}}'
+        network_mode: 'host'
         state: started
         labels: '{{pg_labels}}'
 
