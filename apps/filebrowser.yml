@@ -17,6 +17,26 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
+    - name: 'Check for database files in {{ pgrole }}'
+      stat:
+        path: '/opt/appdata/{{pgrole}}/database.db'
+      register: dbcheck
+
+    - name: 'Make new db for {{ pgrole }} deployment'
+      shell: 'mkdir /opt/appdata/filebrowser && touch database.db'
+      ignore_errors: yes
+      when: not dbcheck.stat.exists
+
+    - name: 'Check for json files in {{ pgrole }}'
+      stat:
+        path: '/opt/appdata/{{pgrole}}/.filebrowser.json'
+      register: jsoncheck
+
+    - name: 'Make new db for {{ pgrole }} deployment'
+      shell: 'mkdir /opt/appdata/filebrowser && touch .filebrowser.json'
+      ignore_errors: yes
+      when: not jsoncheck.stat.exists
+
     # LABELS ######################################################################
     - name: 'Adding Traefik'
       set_fact:
