@@ -58,7 +58,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}/database.db':/database.db'
+          - '/opt/appdata/{{pgrole}}/database.db:/database.db'
           - '/opt/appdata/{{pgrole}}/.filebrowser.json:/.filebrowser.json'
           - '/:/srv'
           - '{{path.stdout}}:{{path.stdout}}'
