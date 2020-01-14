@@ -69,13 +69,27 @@
           POSTGRES_PASSWORD: 'secret'
 
     # MAIN DEPLOYMENT #############################################################
+    - name: 'Deploying {{pgrole2}}'
+      docker_container:
+        name: '{{pgrole2}}'
+        image: '{{image2}}'
+        pull: yes
+        volumes: '{{pg_volumes2}}'
+        env: '{{pg_env2}}'
+        restart_policy: unless-stopped
+        networks:
+          - name: plexguide
+            aliases:
+              - '{{pgrole2}}'
+        state: started
+
     - name: 'Deploying {{pgrole}}'
       docker_container:
         name: '{{pgrole}}'
         image: '{{image}}'
         pull: yes
         published_ports:
-          - '{{ports.stdout}}{{extport}}:{{intport}}'
+          - '{{ports.stdout}}{{extport}}:{{intport}}'        
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
@@ -87,18 +101,3 @@
               - '{{pgrole}}'
         state: started
         labels: '{{pg_labels}}'
-
-    - name: 'Deploying {{pgrole2}}'
-      docker_container:
-        name: '{{pgrole2}}'
-        image: '{{image2}}'
-        pull: yes
-        volumes: '{{pg_volumes2}}'
-        env: '{{pg_env2}}'
-        restart_policy: always
-        networks:
-          - name: plexguide
-            aliases:
-              - '{{pgrole2}}'
-        state: started
-
