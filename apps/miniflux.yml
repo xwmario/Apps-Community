@@ -76,6 +76,7 @@
         name: '{{pgrole2}}'
         image: '{{image2}}'
         pull: yes
+        published_ports:
           - '{{ports.stdout}}{{extport2}}:{{intport2}}'
         volumes: '{{pg_volumes2}}'
         env: '{{pg_env2}}'
