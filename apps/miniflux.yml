@@ -10,8 +10,10 @@
       set_fact:
         pgrole: 'miniflux'
         pgrole2: 'postgres'
-        intport: '80'
+        intport: '8080'
         extport: '8084'
+        intport2: '5432'
+        extport2: '5432'
         image: 'miniflux/miniflux:latest'
         image2: 'postgres:latest'
 
@@ -74,6 +76,7 @@
         name: '{{pgrole2}}'
         image: '{{image2}}'
         pull: yes
+          - '{{ports.stdout}}{{extport}}:{{intport}}'
         volumes: '{{pg_volumes2}}'
         env: '{{pg_env2}}'
         restart_policy: unless-stopped
