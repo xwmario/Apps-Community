@@ -11,7 +11,7 @@
         pgrole: 'kod'
         intport: '80'
         extport: '81'
-        image: 'ugeek/kodexplorer'
+        image: 'yangxuan8282/kodexplorer'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -39,7 +39,6 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/var/www/html'
-          - '/opt/appdata/{{pgrole}}/data:/var/www/html/data/User/admin/home'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
