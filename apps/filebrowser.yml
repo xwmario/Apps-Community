@@ -70,7 +70,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}/:/'
+          - '/opt/appdata/{{pgrole}}:/'
           - '/:/srv'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
