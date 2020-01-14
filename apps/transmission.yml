@@ -177,9 +177,9 @@
         restart_policy: unless-stopped
         state: started
          
-#    - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer. See Wiki for adding RSS Plugin'
-#      docker_container:
-#        name: '{{pgrole}}'
-#        state: stopped
+    - name: 'Stopping {{pgrole}}. Go configure Environment Variables in Portainer.'
+      docker_container:
+        name: '{{pgrole}}'
+        state: stopped
 
 ##PTS-Community
