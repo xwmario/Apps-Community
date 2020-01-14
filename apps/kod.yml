@@ -11,7 +11,7 @@
         pgrole: 'kod'
         intport: '80'
         extport: '81'
-        image: 'ugeek/kodexplorer:amd64'
+        image: 'ugeek/kodexplorer'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
