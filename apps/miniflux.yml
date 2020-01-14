@@ -40,7 +40,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/'
+          - '/opt/appdata/{{pgrole}}:/etc/miniflux'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting {{pgrole2}} Volumes'
