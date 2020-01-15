@@ -49,7 +49,9 @@
       set_fact:
         pg_volumes2:
           - '/opt/appdata/{{pgrole2}}/html:/var/www/html'
-          - '/opt/appdata/[[pgrole2]]/user-files:/user-files'
+          - '/opt/appdata/{{pgrole2}}/user-files:/user-files'
+          - 'mnt:/mnt'
+          - 'opt:/opt'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting {{pgrole}} ENV'
