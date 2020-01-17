@@ -11,7 +11,7 @@
         pgrole: 'zerotier'
         intport: '3443'
         extport: '3443'
-        intport2: '8000'
+        intport2: '3000'
         extport2: '8001'
         image: 'keynetworks/ztncui'
 
@@ -40,7 +40,8 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}/etc:/opt/key-networks/ztncui/etc/'
+          - '/opt/appdata/{{pgrole}}/etc:/opt/key-networks/ztncui/etc/storage'
+          - '/opt/appdata/{{pgrole}}/var:/var/lib/zerotier-one/'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting {{pgrole}} ENV'
