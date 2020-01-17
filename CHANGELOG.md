@@ -1,4 +1,5 @@
-* a2a1ce2 (HEAD -> master, origin/master, origin/HEAD) Add existing file
+* a70eba6 (HEAD -> master, origin/master, origin/HEAD) Add existing file
+* a2a1ce2 Add existing file
 * 7d57f4f Add existing file
 * db3b2dc Add files via upload
 * 2c86804 Update grafana.yml
@@ -6,6 +7,7 @@
 * 41cf821 Add files via upload
 *   099c2dd Merge branch 'master' of https://github.com/PTS-Team/Apps-Community
 |\  
+* | 8659a77 [ FIX ] Layout print crontabs
 | * 4bedb74 Delete zerotier.yml
 | * ddd5080 Update zerotier.yml
 | * 0295667 Update zerotier.yml
@@ -27,7 +29,6 @@
 | * 52508c3 Update filebrowser.yml
 | * 2eaec11 Update filebrowser.yml
 | * d2a6d5b Add files via upload
-* | 8659a77 [ FIX ] Layout print crontabs
 |/  
 * 6d2bba6 Update _appsgen.sh
 * 093b609 Update _core.yml
@@ -102,9 +103,9 @@
 * 3a0e825 Update transmissionvpn.yml
 *   782f5da Merge branch 'master' of https://github.com/PTS-Team/Apps-Community
 |\  
+* | 6c465bd Update transmissionvpn.yml
 | * 54684f5 Update transmissionvpn.yml
 | * 8b166d6 Update transmissionvpn.yml
-* | 6c465bd Update transmissionvpn.yml
 |/  
 * 8d670c8 Update transmissionvpn.yml
 * fb25156 Update transmissionvpn.yml
@@ -114,7 +115,6 @@
 *   93747ad Merge pull request #9 from Hawkinzzz/patch-2
 |\  
 | * 4982832 Update openvpn.yml
-| * fba63a2 Create openvpn.yml
 * | 27c4364 Update delugevpn.yml
 * | e1b5a81 Update delugevpn.yml
 * | 15de9d3 Update delugevpn.yml
@@ -132,10 +132,10 @@
 * | 7b36825 Update deluge-vpn.yml
 * |   985ae1f Merge branch 'master' of https://github.com/PTS-Team/Apps-Community
 |\ \  
+* | | 57ffc6e Update deluge-vpn.yml
 | * | 828f147 Update deluge-vpn.yml
 | * | 5b742fd Update deluge-vpn.yml
 | * | 2eca67e Update deluge-vpn.yml
-* | | 57ffc6e Update deluge-vpn.yml
 |/ /  
 * | c0323c6 Update deluge-vpn.yml
 * | 288beaa Update deluge-vpn.yml
@@ -153,6 +153,7 @@
 * | ddf3ae5 Update deluge-vpn.yml
 * | e0a207e Update deluge-vpn.yml
 * | 296a57e Update deluge-vpn.yml
+| * fba63a2 Create openvpn.yml
 |/  
 * cf096bc Update qbittorrentvpn.yml
 * d474599 Update qbittorrentvpn.yml
@@ -282,6 +283,8 @@
 | |\  
 | |/  
 |/|   
+| * ca5922b Update nextcloud.yml
+| * 3290f6e Update heimdall.yml
 * | 1830612 Update rclonebrowser.yml
 * | 44cf9cc Update _core.yml
 * | d40ca58 Update _core.yml
@@ -293,8 +296,6 @@
 |/ /  
 * | 0fc79d3 Update embystats.yml
 * | 35a719d Update embystats.yml
-| * ca5922b Update nextcloud.yml
-| * 3290f6e Update heimdall.yml
 | *   60995e6 Merge pull request #13 from MrDoobPG/master
 | |\  
 | |/  
@@ -308,15 +309,15 @@
 * | 090fb85 tld set update
 * |   8c6dd9b Merge branch 'master' of https://github.com/MrDoobPG/Apps-Community
 |\ \  
-| * \   5174d96 Merge pull request #11 from MrDoobPG/dev
-| |\ \  
-| | |/  
-| | * 00ce66b Update nextcloud.yml
-| | * 354e753 Update nextcloud.yml
 * | | 3f5814c Update _core.yml
-|/ /  
+| * |   5174d96 Merge pull request #11 from MrDoobPG/dev
+| |\ \  
+|/ / /  
+| | _   
+| * 00ce66b Update nextcloud.yml
 * | b19f5d2 remove duplicated domain names
 * | b4bf188 Update nextcloud.yml
+| * 354e753 Update nextcloud.yml
 * | 0e4ff2a Update firefox.yml
 * | db0838a Update firefox.yml
 * | 42b2093 Update firefox.yml
@@ -339,45 +340,45 @@
 * |   6e0f10a Merge branch 'dev'
 |\ \  
 | |/  
+* | 1ba870c Update README.md
 | *   89611b4 Merge pull request #5 from MrDoobPG/master
 | |\  
-| * | b0b4b66 masterupdate
-| * | f7a65d6 Update bitwarden.yml
-| * | 5d94993 init
-| * | d886804 merg
-| * | b6205df merg
-| * | bb2d3c0 merg
-| * | 225a34f update
-| * | 27c71ff update
-| * | 70bfb3e update
-| * | 00b29a5 Update
-| * | bfe6cfb fix syntax errors
-| * | 86cea02 fix network and database
-| * | 8b14d99 comment out ports
-| * | 8f78e1c tweaks
-| * | 6dc494a update
-| * | 2b3a86d update
-| * | e04d112 correct firefly issues
-| * | bc27a52 update
-| * | ed6f0bb AVIDemux
-| * | 8678f3b Delete avidemux.ym;
-| * | 717d4be AVIdemux
-| * | 0fedc45 Update airsonic.yml
-| * | 3472973 Add files via upload
-| * | 2e16424 Add files via upload
-| * | 641e809 Update airsonic.yml
-| * | 6bbd15f Add files via upload
-| * | 4e0e586 Update flexget.yml
-* | | 1ba870c Update README.md
 | |/  
 |/|   
+| * b0b4b66 masterupdate
+| * f7a65d6 Update bitwarden.yml
+| * 5d94993 init
+| * d886804 merg
+| * b6205df merg
+| * bb2d3c0 merg
+| * 225a34f update
+| * 27c71ff update
+| * 70bfb3e update
+| * 00b29a5 Update
+| * bfe6cfb fix syntax errors
+| * 86cea02 fix network and database
+| * 8b14d99 comment out ports
+| * 8f78e1c tweaks
+| * 6dc494a update
+| * 2b3a86d update
+| * e04d112 correct firefly issues
+| * bc27a52 update
+| * ed6f0bb AVIDemux
+| * 8678f3b Delete avidemux.ym;
+| * 717d4be AVIdemux
+| * 0fedc45 Update airsonic.yml
+| * 3472973 Add files via upload
+| * 2e16424 Add files via upload
+| * 641e809 Update airsonic.yml
+| * 6bbd15f Add files via upload
+| * 4e0e586 Update flexget.yml
 * |   f732b55 Merge pull request #1 from PGBlitz/v8.6
 |\ \  
 | |/  
 | *   6798440 Merge pull request #56 from ChaosZero112/dozzle
 | |\  
-| | * 1c91bdf Initial Dozzle commit
 | * | deccf1d Rename apps/kodi-headless.yml to apps/templates/broken/kodi-headless.yml
+| | * 1c91bdf Initial Dozzle commit
 | |/  
 | * 4cbfe25 Create users.auth.php
 | * 2aa9e93 Rename apps/templates/broken/kodi-headless.yml to apps/kodi-headless.yml
@@ -436,66 +437,68 @@
 | |/  
 | *   d504222 Merge pull request #45 from Zoink5/patch-1
 | |\  
-| | * 50a75a5 Removed OAUTH (breaks bitwarden-apps)
 | * | 4616dcb Varken Docker container
 | * |   2b10f4b Merge pull request #49 from vFlagR/embystats_int_port
 | |\ \  
-| | * | 944b9e4 Updating embystats internal port to 5432 instead of 80. Tested working via portainer
 | * | | 9e01ca0 ansible warn fix
+| | * | 944b9e4 Updating embystats internal port to 5432 instead of 80. Tested working via portainer
 | |/ /  
 | * | fd1b313 Update README.md
 | * | a143e89 Repo change
 | * |   878f26e Merge pull request #47 from dhumphrey7/patch-1
 | |\ \  
-| | * | b0343f8 Fixed a typo to Nasm package
-| * | |   17dd53a Merge pull request #48 from dhumphrey7/patch-2
+| * \ \   17dd53a Merge pull request #48 from dhumphrey7/patch-2
 | |\ \ \  
-| | |/ /  
-| |/| |   
-| | * | f20f613 Update autoProcess.ini
+| | * | | f20f613 Update autoProcess.ini
+| |/ / /  
+| | * | b0343f8 Fixed a typo to Nasm package
 | |/ /  
 | * |   397fb10 Merge pull request #46 from PGBlitz/v8.5.6
 | |\ \  
-| | |/  
-| |/|   
-| | *   d7dd242 Merge pull request #43 from jgibson02/patch-1
-| | |\  
-| | | * b7f6b95 Fix missing quotations on braces expression
+| | * \   d7dd242 Merge pull request #43 from jgibson02/patch-1
+| | |\ \  
+| | | | * 50a75a5 Removed OAUTH (breaks bitwarden-apps)
+| | |_|/  
+| |/| |   
 | | * | 4202795 rTorrent + ruTorrent integrated OpenVPN
 | | * | e45211e Prepared Ansible 2.6 und cleanup
+| * | | 6d9bc83 Removed missconfigured tun interface
+| * | | 99fc259 Updated yml for Ansible 2.6
+| | | * b7f6b95 Fix missing quotations on braces expression
 | | |/  
-| * | 6d9bc83 Removed missconfigured tun interface
-| * | 99fc259 Updated yml for Ansible 2.6
 | * |   768f816 Merge pull request #42 from PGBlitz/v8.5.6
 | |\ \  
 | | |/  
 | | * 31ff3d7 update
 | | *   ef8bdcc Merge pull request #41 from h1f0x/patch-1
 | | |\  
-| | | * 06e4383 rTorrent + FloodUI + OpenVPN
-| | * |   7db54dd Merge pull request #39 from ChaosZero112/flexget
+| | * \   7db54dd Merge pull request #39 from ChaosZero112/flexget
 | | |\ \  
-| | | * | a71d18d Initialize Flexget
-| | | * |   99ad439 Merge branch 'v8.5.6' of github.com:PGBlitz/Apps-Community into flexget
-| | | |\ \  
-| | | * | | a14be68 FlexGit initial commit
-| | * | | |   d04dabb Merge pull request #40 from dhumphrey7/v8.5.6
-| | |\ \ \ \  
-| | | |_|_|/  
-| | |/| | |   
-| | | * | | da0317e fixed directory names
-| | | * | | 64aad0e Update autoProcess.ini
-| | | * | | 1457880 Updates nasm to 2.14.02
-| | | * | | fd0b180 Changing templates folder to correct path
-| | |/ / /  
-| * | | | e86ed73 fix
-| |/ / /  
-| * | | 370b497 No longer needed
-| * | | 093776b Deconflict external port with Synclounge
-| * | |   929a75d Merge pull request #37 from DaRealestUK/v8.5.6
-| |\ \ \  
+| | * \ \   d04dabb Merge pull request #40 from dhumphrey7/v8.5.6
+| | |\ \ \  
+| | | | | * 06e4383 rTorrent + FloodUI + OpenVPN
+| | | |_|/  
+| | |/| |   
+| | | * | da0317e fixed directory names
+| | | * | 64aad0e Update autoProcess.ini
+| | | * | 1457880 Updates nasm to 2.14.02
+| | | * | fd0b180 Changing templates folder to correct path
+| | |/ /  
+| * | | e86ed73 fix
+| |/ /  
+| * | 370b497 No longer needed
+| * | 093776b Deconflict external port with Synclounge
+| * |   929a75d Merge pull request #37 from DaRealestUK/v8.5.6
+| |\ \  
+| | | * a71d18d Initialize Flexget
+| | | *   99ad439 Merge branch 'v8.5.6' of github.com:PGBlitz/Apps-Community into flexget
+| | | |\  
 | | |_|/  
 | |/| |   
+| * | |   8b9a02f Merge pull request #38 from h1f0x/patch-2
+| |\ \ \  
+| | * | | e88b2b2 Trakto.or
+| |/ / /  
 | | * | 43d7dbd Delete TEMPLATEPPScript
 | | * | 2916e91 Delete autoProcess.ini
 | | * | 9bd40af Delete 30-config
@@ -547,48 +550,45 @@
 | | * | 5ac3779 Create build-ffmpeg
 | | * | 01f7ad5 Create 30-config
 | | * | 4e43c5e Create nzbget-mp4.yml
-| | |/  
-| * |   8b9a02f Merge pull request #38 from h1f0x/patch-2
-| |\ \  
-| | |/  
-| |/|   
-| | * e88b2b2 Trakto.or
+| |/ /  
+| | * a14be68 FlexGit initial commit
 | |/  
 | *   03bf1a2 Merge pull request #35 from ChaosZero112/medusa
 | |\  
-| | * 530015e Delete settings.json
-| | * 45d2a91 Removed forced https form traefik
-| * |   4f9e7bb Merge pull request #32 from ChaosZero112/Transmission
+| * \   4f9e7bb Merge pull request #32 from ChaosZero112/Transmission
 | |\ \  
-| | * | 530efdb Update transmission.yml
-| | * | 1196a0b Fix for volume mnt
-| | * | 6cb6447 Fixed RSS deployment
-| | * | ec742ab Fix RSS config step
-| | * | 361d6e4 Third time's a charm...
-| | * | 4cf9eb9 Fix for real this time...
-| | * | 6c41135 Fixed yaml typo
-| | * | 9cda9e1 Removed alt. port, added rss template, stopped container when finished, misc.
-| | * | 4e59255 Fixed typo
-| | * |   6deeeba Merge remote-tracking branch 'upstream/v8.5.6' into Transmission
-| | |\ \  
-| | | |/  
-| | * |   e38ee78 Merge remote-tracking branch 'upstream/v8.5' into Transmission
-| | |\ \  
-| | | * | f87fd63 upload dockergc
-| | | * | 2cc70ad restore
-| | | * | 7fc7879 Update _core.yml
-| | * | | a1da81f Initial Transmissionbt commit
-| * | | |   f252fbd Merge pull request #34 from ChaosZero112/mariadb
-| |\ \ \ \  
-| | * | | | 8966982 Initial MariaDB commit.
-| | | |_|/  
-| | |/| |   
+| * \ \   f252fbd Merge pull request #34 from ChaosZero112/mariadb
+| |\ \ \  
 | * | | | a060b0c deluge port fix
-| |/ / /  
+| | | | * 530015e Delete settings.json
+| | | | * 45d2a91 Removed forced https form traefik
+| | |_|/  
+| |/| |   
+| | * | 8966982 Initial MariaDB commit.
+| |/ /  
+| | * 530efdb Update transmission.yml
+| | * 1196a0b Fix for volume mnt
+| | * 6cb6447 Fixed RSS deployment
+| | * ec742ab Fix RSS config step
+| | * 361d6e4 Third time's a charm...
+| | * 4cf9eb9 Fix for real this time...
+| | * 6c41135 Fixed yaml typo
+| | * 9cda9e1 Removed alt. port, added rss template, stopped container when finished, misc.
+| | * 4e59255 Fixed typo
+| | *   6deeeba Merge remote-tracking branch 'upstream/v8.5.6' into Transmission
+| | |\  
+| | |/  
+| |/|   
+| | *   e38ee78 Merge remote-tracking branch 'upstream/v8.5' into Transmission
+| | |\  
 | * | | b08e161 mass update name (not breaking, no paths changed)
+| | * | a1da81f Initial Transmissionbt commit
 | * | | 0f8d989 mass update urls
 | * | | 7d01bc7 fix
+| | | * f87fd63 upload dockergc
+| | | * 2cc70ad restore
 | * | | 386850d Update _core.yml
+| | | * 7fc7879 Update _core.yml
 | | |/  
 | |/|   
 | * |   26e6a81 Merge branch 'v8.4' into v8.5
@@ -609,17 +609,15 @@
 | | | * 0bc3976 Update synclounge.yml
 | | | * 2fd29aa Update synclounge.yml
 | | |/  
-| | *   217db0a Merge pull request #28 from ChaosZero112/v8.5
-| | |\  
-| * | \   6114eed Merge pull request #25 from ChaosZero112/v8.5
-| |\ \ \  
+| * |   6114eed Merge pull request #25 from ChaosZero112/v8.5
+| |\ \  
+| | | *   217db0a Merge pull request #28 from ChaosZero112/v8.5
+| | | |\  
 | | | |/  
 | | |/|   
 | | * | 934ce9e Moved untested playbooks to staging branch, reverting last shoko commit
 | | * | 8c061b3 Initial commit - Sickrage, Sickchill, Pydio, Pydio Cells, MariaDB
 | | * | 5e3e1d6 Updated path to /opt/communityapps/apps/_core.yml
-| | * | 17f440d Shoko Server - Make mnt writable
-| | * | e060ae8 Added Shoko Server - Anime Media Manager
 | * | |   eed11f1 Merge branch 'v8.4' into v8.5
 | |\ \ \  
 | | | |/  
@@ -642,16 +640,16 @@
 | * | |   18f74b8 Merge branch 'v.8.4' into v8.5
 | |\ \ \  
 | | |/ /  
-| | | /   
-| | |/    
-| |/|     
-| | * d0c0577 fix
+| | * | d0c0577 fix
+| |/ /  
+| | * 17f440d Shoko Server - Make mnt writable
+| | * e060ae8 Added Shoko Server - Anime Media Manager
 | |/  
 | * 72e0510 fix
 | *   c78cd8c Merge pull request #22 from h1f0x/patch-1
 | |\  
-| | * 1f4f4e0 JDowanloader2 integrated OpenVPN
 | * | 6d5f9d9 fix: wrong location for _core and templates!
+| | * 1f4f4e0 JDowanloader2 integrated OpenVPN
 | |/  
 | *   40b09c0 Merge pull request #21 from ayush6624/v8.3
 | |\  
@@ -672,6 +670,11 @@
 | | |\  
 | | |/  
 | |/|   
+| | * 689dc91 Removed secure conx (line 60)
+| | * 7a54a47 Removed VNC connection
+| | * 1856fc6 Fixed line 56
+| | * 1970f40 Fixed line 21
+| | * b680d5a Initial commit
 | * | 6345fb9 fix
 | * | 6fde75d fix
 | * | 265132e fixes
@@ -683,21 +686,16 @@
 | * | fb9f541 Add cloudcmd
 | * | ff7c291 Add bitwarden
 | * | 671a532 Add Bazarr
-| * | 916169b add _core files
-| * | 7af4074 fix
-| * | a314d5b update
-| | * 689dc91 Removed secure conx (line 60)
-| | * 7a54a47 Removed VNC connection
-| | * 1856fc6 Fixed line 56
-| | * 1970f40 Fixed line 21
-| | * b680d5a Initial commit
 | | * 895d080 Added published ports lines 75-78
 | | * 46a63a9 Reverted intport2 and added 6061
 | | * d637bf0 Change intport to 3031
 | | * 0a77791 Initial commit
 | | *   e6cede5 Merge pull request #6 from Admin9705/v8
 | | |\  
+| * | | 916169b add _core files
+| * | | 7af4074 fix
 | | | * 7bac710 fix
+| * | | a314d5b update
 | | |/  
 | |/|   
 | | * d9f70d0 Create dockergctk.yml
@@ -770,79 +768,79 @@
 | | |\  
 | | |/  
 | |/|   
+| | * 9c442c9 Create mcmyadmin2.yml
 | * | a8be222 Delete handbrake2
 | * | ed71332 update
 | * | f8fb381 update
 | * |   de7af72 Merge branch 'v8' of https://github.com/Admin9705/PlexGuide-Community into v8
 | |\ \  
-| | * \   84b83fa Merge pull request #12 from TechButton/v8
+| * | | f22683c update
+| | * |   84b83fa Merge pull request #12 from TechButton/v8
 | | |\ \  
-| | | * | 5409d1d Update xteve.yml
-| | | * | 452499f Update xteve.yml
-| | | * | 427399a Update xteve.yml
-| | | * | c970ae8 Update xteve.yml
-| | | * | f81d708 Create xteve.yml
-| * | | | f22683c update
 | |/ / /  
 | * | | 501b89c added the older ones
 | * | |   16374e7 Merge branch 'v8' of https://github.com/Admin9705/PlexGuide-Community into v8
 | |\ \ \  
-| | * \ \   6f6b4a5 Merge pull request #10 from timekills/patch-8
+| * | | | 327c6f4 update
+| | * | |   6f6b4a5 Merge pull request #10 from timekills/patch-8
 | | |\ \ \  
-| | | * | | 5478187 Changed frontend to handbrake;
-| | | * | | e31f762 Extra ' in line 38 removed
-| | * | | |   1a7746b Merge pull request #11 from timekills/patch-9
+| | * \ \ \   1a7746b Merge pull request #11 from timekills/patch-9
 | | |\ \ \ \  
-| | | * | | | 7e9f392 Fix name, .yml, Traefik frontend.rule
-| | |/ / / /  
-| * | | | | 327c6f4 update
+| |/ / / / /  
+| | * | | | 7e9f392 Fix name, .yml, Traefik frontend.rule
 | |/ / / /  
 | * | | | 30e169f removed bad traefik label
+| | | | * 808a968 Extension, name, traefik front end
+| | | | * 8f47ac1 Fixed extra ' in line 38
+| | | | *   67c1bd9 Merge pull request #1 from Admin9705/v8
+| | | | |\  
+| | |_|_|/  
+| |/| | |   
+| | * | | 5478187 Changed frontend to handbrake;
+| | * | | e31f762 Extra ' in line 38 removed
 | |/ / /  
-| | | * 9c442c9 Create mcmyadmin2.yml
-| | | * 808a968 Extension, name, traefik front end
-| | | * 8f47ac1 Fixed extra ' in line 38
-| | | *   67c1bd9 Merge pull request #1 from Admin9705/v8
-| | | |\  
-| | |_|/  
-| |/| |   
+| | * | 5409d1d Update xteve.yml
+| | * | 452499f Update xteve.yml
+| | * | 427399a Update xteve.yml
+| | * | c970ae8 Update xteve.yml
+| | * | f81d708 Create xteve.yml
 | * | |   d4b9837 Merge pull request #7 from sneedster/patch-2
 | |\ \ \  
-| | * | | 8e58e7c Update delugevpn.yml
-| * | | |   dd22fbe Merge pull request #8 from timekills/patch-6
+| * \ \ \   dd22fbe Merge pull request #8 from timekills/patch-6
 | |\ \ \ \  
 | | * | | | b36ef57 extension left off
 | |/ / / /  
 | * | | |   37d8cea Merge pull request #4 from timekills/patch-2
 | |\ \ \ \  
-| | * | | | 033b1ff Handbrake oAuth (web interface)
-| * | | | |   8cc569b Merge pull request #5 from timekills/patch-3
+| * \ \ \ \   8cc569b Merge pull request #5 from timekills/patch-3
 | |\ \ \ \ \  
-| | * | | | | 663342b Create jdownloader2.yml
-| | |/ / / /  
-| * | | | |   ed34d7a Merge pull request #6 from timekills/patch-4
-| |\ \ \ \ \  
-| | |_|/ / /  
-| |/| | | |   
-| | * | | | 41a35e7 Create handbrake-password
-| | |/ / /  
-| * | | | 04d7a2f fix sonarr locaiton
-| * | | | df529de update locations again
-| * | | | e3a438b update locations
-| * | | | e913154 update locations for sonarr/radarr4k
+| * \ \ \ \ \   ed34d7a Merge pull request #6 from timekills/patch-4
+| |\ \ \ \ \ \  
+| | | | | * | | 8e58e7c Update delugevpn.yml
+| | |_|_|/ / /  
+| |/| | | | |   
+| * | | | | | 04d7a2f fix sonarr locaiton
+| * | | | | | df529de update locations again
+| * | | | | | e3a438b update locations
+| * | | | | | e913154 update locations for sonarr/radarr4k
+| | * | | | | 41a35e7 Create handbrake-password
+| |/ / / / /  
+| | * | | | 663342b Create jdownloader2.yml
+| |/ / / /  
+| | * | | 033b1ff Handbrake oAuth (web interface)
 | |/ / /  
 | * | | af2e0ae Revert "Revert "Merge branch 'v8' of https://github.com/Admin9705/PlexGuide-Community into v8""
 | * | | 645888c Revert "Merge branch 'v8' of https://github.com/Admin9705/PlexGuide-Community into v8"
 | * | |   1dccce2 Merge branch 'v8' of https://github.com/Admin9705/PlexGuide-Community into v8
 | |\ \ \  
-| | * \ \   2bf922c Merge pull request #3 from sneedster/patch-1
-| | |\ \ \  
-| | | * | | 0e5e3cc create delugevpn.yml
-| | | | |/  
-| | | |/|   
 | * | | | 1c1f955 Revert "Merge pull request #2 from TechButton/patch-1"
-| |/ / /  
-| * | | fe65612 update
+| | * | |   2bf922c Merge pull request #3 from sneedster/patch-1
+| | |\ \ \  
+| |/ / / /  
+| * | | | fe65612 update
+| | |_|/  
+| |/| |   
+| | * | 0e5e3cc create delugevpn.yml
 | |/ /  
 | * |   5f1aa8c Merge pull request #2 from TechButton/patch-1
 | |\ \  
