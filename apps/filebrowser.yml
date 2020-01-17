@@ -60,7 +60,6 @@
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/database.db'
           - '/opt/appdata/{{pgrole}}:/.filebrowser.json'
-          - '/mnt:/mnt'
           - '/opt:/opt'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
