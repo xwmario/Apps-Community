@@ -17,9 +17,9 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
-    - name: 'Checking for existing filebrowser JSON file'
+    - name: 'Checking for existing filebrowser config file'
       stat:
-        path: '/opt/appdata/{{pgrole}}/.filebrowser.json'
+        path: '/opt/appdata/{{pgrole}}/database.db'
       register: stat_result
 
     - name: 'Clone JSON and make DB for first use'
