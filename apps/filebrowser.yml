@@ -10,7 +10,7 @@
       set_fact:
         pgrole: 'filebrowser'
         intport: '80'
-        extport: '81'
+        extport: '8085'
         image: 'filebrowser/filebrowser'
 
     # CORE (MANDATORY) ############################################################
