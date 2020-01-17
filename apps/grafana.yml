@@ -44,6 +44,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/var/lib/grafana'
+          - '/opt/appdata/{{pgrole}}/etc:/etc/grafana'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
