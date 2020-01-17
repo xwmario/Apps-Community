@@ -38,7 +38,8 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/opt/key-networks/ztncui/etc/'
+          - '/opt/appdata/{{pgrole}}/etc:/opt/key-networks/ztncui/etc/'
+          - '/opt/appdata/{{pgrole}}/var:/var/lib/zerotier-one/
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
 
