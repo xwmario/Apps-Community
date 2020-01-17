@@ -58,8 +58,8 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/database.db'
-          - '/opt/appdata/{{pgrole}}:/.filebrowser.json'
+          - '/opt/appdata/{{pgrole}}/database.db:/database.db'
+          - '/opt/appdata/{{pgrole}}/.filebrowser.json:/.filebrowser.json'
           - '/opt:/opt'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
