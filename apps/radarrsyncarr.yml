@@ -38,7 +38,7 @@
         pull: yes
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
-        restart_policy: Stopped
+        restart_policy: unless-stopped
         networks:
           - name: plexguide
             aliases:
