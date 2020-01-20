@@ -27,7 +27,7 @@
           SONARR_B_KEY: 'SECOND API_KEY'
           SONARR_B_PROFILE_ID: 'follow instructions here to get ID (https://github.com/syncarr/syncarr)'
           SONARR_B_PATH: 'settoyourtvpath Example: (/mnt/unionfs/TV)'
-          SYNC_INTERVAL_SECONDS: 3600 #Updates every hours
+          SYNC_INTERVAL_SECONDS: '3600' #Updates every hours
 
 
     # MAIN DEPLOYMENT #############################################################
