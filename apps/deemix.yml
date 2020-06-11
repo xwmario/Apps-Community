@@ -13,9 +13,9 @@
     - name: 'Creating Alternative Facts'
       set_fact:
         pgrole: 'deemix'
-        intport: '33333'
-        extport: '33333'
-        image: 'bocki/deemix'
+        intport: '6595'
+        extport: '6595'
+        image: 'registry.gitlab.com/bockiii/deemix-docker'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Always have a backup plan'
