@@ -2,7 +2,7 @@
 #
 # Title:      Readarr
 # Author(s):  
-# URL:        
+# URL:        https://hub.docker.com/r/hotio/readarr
 # GNU:        
 ################################################################################
 ---
@@ -13,8 +13,8 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'readarr'
-        intport: '8687'
-        extport: '8687'
+        intport: '8787'
+        extport: '8787'
         image: 'hotio/readarr:unstable'
 
     # CORE (MANDATORY) ############################################################
@@ -42,8 +42,9 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '{{path.stdout}}:{{path.stdout}}'
+          - '/etc/localtime:/etc/localtime:ro'
           - '/opt/appdata/{{pgrole}}:/config'
+          - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
