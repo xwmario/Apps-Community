@@ -70,8 +70,8 @@
         name: '{{pgrole}}'
         image: '{{image}}'
         pull: yes
-        volumes: '{{amg_volumes}}'
-        env: '{{amg_env}}'
+        volumes: '{{pg_volumes}}'
+        env: '{{pg_env}}'
         restart_policy: unless-stopped
         capabilities:
           - 'SYS_TIME'
