@@ -51,7 +51,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          ND_ENABLETRANSCODINGCONFIG: 'false'
+          ND_ENABLETRANSCODINGCONFIG: 'true'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
