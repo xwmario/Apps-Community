@@ -9,7 +9,7 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'radarrsyncarr'
-        image: 'syncarr/syncarr:1.2.1'
+        image: 'syncarr/syncarr:latest'
 
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
