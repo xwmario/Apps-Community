@@ -41,7 +41,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/oscarr/data'
+          - '/opt/appdata/{{pgrole}}/data:/oscarr/data'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
