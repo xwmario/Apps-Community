@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Title:      Shoko Anime Server
-# Author(s):  Cayde Dixon (Cazzar), Thomas Baer (da3dsoul), ElementalCrisis, hidden4003
-# URL:        https://shokoanime.com/ - https://github.com/ShokoAnime/ShokoServer
+# Title:      PGBlitz (Reference Title File)
+# Author(s):  Admin9705
+# URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 ---
@@ -44,12 +44,13 @@
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
           - '/opt/appdata/{{pgrole}}/data:/home/shoko/.shoko'
+          - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
-          PUID: 1000
-          PGID: 1000
+          PUID: '1000'
+          PGID: '1000'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'

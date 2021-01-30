@@ -51,6 +51,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          CAPTCHA_SOLVER: 'hcaptcha-solver'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'

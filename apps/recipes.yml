@@ -13,7 +13,7 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'recipes'
-        intport: '80'
+        intport: '8080'
         extport: '8073'
         image: 'vabene1111/recipes:latest'
 
