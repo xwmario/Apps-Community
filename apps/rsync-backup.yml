@@ -14,7 +14,7 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'rsync-backup'
-        image: 'smashingtags/rsync-backup'
+        image: 'mrfret/rsync-backup'
 
     - name: 'Register TimeZone'
       shell: 'cat /etc/timezone'
