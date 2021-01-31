@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Title:      
-# Author(s):  
-# URL:        
+# Title:      PGBlitz (Reference Title File)
+# Author(s):  Admin9705
+# URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 ---
@@ -12,10 +12,10 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'plexcleaner'
-        intport: '80'
-        extport: '5000'
-        image: 'selexin/plex-library-cleaner:latest'
+        pgrole: 'mylar3'
+        intport: '8090'
+        extport: '8090'
+        image: 'linuxserver/mylar3:latest'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -51,9 +51,6 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          PLEX_BASE_URL: 'http://plex:32400'
-          PLEX_TOKEN: 'somerandomstring'
-          
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
