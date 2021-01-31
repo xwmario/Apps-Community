@@ -47,7 +47,7 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}:/etc/3proxy/cfg'
           - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
@@ -55,6 +55,8 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          PROXY_LOGIN:  'admin'
+          PROXY_PASSWORD: 'password123'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'

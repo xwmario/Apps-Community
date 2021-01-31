@@ -42,7 +42,6 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}:/config'
           - '/opt/appdata/{{pgrole}}:/storage'
 
     - name: 'Setting {{pgrole}} ENV'
@@ -52,7 +51,7 @@
           PGID: '1000'
           LOG_LEVEL: 'DEBUG'
           PLEX_TOKEN: 'YOURPLEXTOKENHERE'
-          PLEX_URL: 'plex.{{domain.stdout}}'
+          PLEX_URL: 'https://plex.{{domain.stdout}}:443'
           TZ: 'America/New_York'
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
