@@ -13,12 +13,12 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: '3proxy'
-        intport: '3128'
-        extport: '3128'
+        intport: '8080'
+        extport: '8097'
         intport2: '1080'
         extport2: '1080'
-        intport3: '8080'
-        extport3: '8097'
+        intport3: '3128'
+        extport3: '3128'
         image: 'riftbit/3proxy:latest'
 
     # CORE (MANDATORY) ############################################################

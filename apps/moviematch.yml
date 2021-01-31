@@ -52,7 +52,7 @@
           PGID: '1000'
           LOG_LEVEL: 'DEBUG'
           PLEX_TOKEN: 'YOURPLEXTOKENHERE'
-          PLEX_URL: 'plex.yoururl.com'
+          PLEX_URL: 'plex.{{domain.stdout}}'
           TZ: 'America/New_York'
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
