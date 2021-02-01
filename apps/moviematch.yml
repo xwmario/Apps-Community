@@ -1,9 +1,8 @@
 #!/bin/bash
 #
-# Title:      
-# Author(s):  
-# URL:        
-# GNU:        General Public License v3.0
+# Title:      moviematch
+# Author(s):  eidanyosoy
+# URL:        https://github.com/FlareSolverr/FlareSolverr
 ################################################################################
 ---
 - hosts: localhost
@@ -12,10 +11,10 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'plexcleaner'
-        intport: '80'
-        extport: '5000'
-        image: 'selexin/plex-library-cleaner:latest'
+        pgrole: 'moviematch'
+        intport: '8000'
+        extport: '8601'
+        image: 'lukechannings/moviematch'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -43,18 +42,17 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}:/config'
-          - '{{path.stdout}}:{{path.stdout}}'
+          - '/opt/appdata/{{pgrole}}:/storage'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          PLEX_BASE_URL: 'http://plex:32400'
-          PLEX_TOKEN: 'somerandomstring'
-          
-
+          LOG_LEVEL: 'DEBUG'
+          PLEX_TOKEN: 'YOURPLEXTOKENHERE'
+          PLEX_URL: 'https://plex.{{domain.stdout}}:443'
+          TZ: 'America/New_York'
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
       docker_container:

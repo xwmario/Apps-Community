@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title:      PGBlitz (Reference Title File)
-# Author(s):  Admin9705
+# Author(s):  Shadowtor
 # URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
@@ -12,10 +12,14 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'listmonk'
-        intport: '9000'
-        extport: '9050'
-        image: 'listmonk/listmonk:latest'
+        pgrole: '3proxy'
+        intport: '8080'
+        extport: '8097'
+        intport2: '1080'
+        extport2: '1080'
+        intport3: '3128'
+        extport3: '3128'
+        image: 'riftbit/3proxy:latest'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -43,7 +47,7 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}:/etc/3proxy/cfg'
           - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
@@ -51,6 +55,8 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          PROXY_LOGIN:  'admin'
+          PROXY_PASSWORD: 'password123'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
