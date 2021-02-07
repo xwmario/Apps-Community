@@ -48,9 +48,9 @@
           - '/opt/appdata/{{pgrole}}/Media:/home/Tdarr/Media'
           - '{{path.stdout}}:{{path.stdout}}'
           
-    - name: 'Setting {{pgrole}} ENV'
-      set_fact:
-        pg_env:
+#    - name: 'Setting {{pgrole}} ENV'
+#      set_fact:
+#        pg_env:
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
