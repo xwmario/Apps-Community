@@ -39,7 +39,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}/downloads:/downloads'
-          - '/opt/appdata/{{pgrole}}/config/:/config'
+          - '/opt/appdata/{{pgrole}}/config.toml:/config.toml'
           - '/etc/localtime:/etc/localtime:ro'
           
 
@@ -48,7 +48,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          CONFIG_FILE: '/config/config.toml'
+          CONFIG_FILE: '/config.toml'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
