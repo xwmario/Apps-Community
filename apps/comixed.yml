@@ -10,7 +10,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'bazarr'
+        pgrole: 'comixed'
         intport: '7171'
         extport: '7834'
         image: 'comixed/comixed:latest'

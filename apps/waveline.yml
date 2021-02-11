@@ -10,7 +10,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'bazarr'
+        pgrole: 'waveline'
         intport: '5000'
         extport: '7733'
         image: 'wellenline/waveline-server:latest'
