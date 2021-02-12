@@ -17,6 +17,16 @@
     - name: 'Including cron job'
       include_tasks: '/opt/coreapps/apps/_core.yml'
 
+    - name: 'Checking for existing config file'
+      stat:
+        path: '/opt/appdata/{{pgrole}}/config.toml'
+      register: stat_result
+
+    - name: 'Clone config for first use'
+      include_tasks: '/opt/communityapps/apps/templates/bevy/config.toml'
+      when: stat_result.stat.exists == False
+      ignore_errors: yes
+
     # LABELS ######################################################################
     - name: 'Adding Traefik'
       set_fact:
@@ -39,7 +49,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}/downloads:/downloads'
-          - '/opt/appdata/{{pgrole}}/config/:/config'
+          - '/opt/appdata/{{pgrole}}/config.toml:/config.toml'
           - '/etc/localtime:/etc/localtime:ro'
           
 
@@ -48,7 +58,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          CONFIG_FILE: '/config/config.toml'
+          CONFIG_FILE: '/config.toml'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
