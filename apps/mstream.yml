@@ -45,7 +45,6 @@
           - '/etc/localtime:/etc/localtime:ro'
           - '/opt/appdata/{{pgrole}}:/config:rw'
           - '/mnt/unionfs:/music:ro'
-          - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
