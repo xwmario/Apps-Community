@@ -15,7 +15,7 @@
         pgrole: 'organizr'
         intport: '80'
         extport: '8040'
-        image: 'linuxserver/organizr'
+        image: 'organizr/organizr'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -51,6 +51,8 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          branch: 'v2-master'
+          fpm: 'false'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
