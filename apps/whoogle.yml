@@ -1,7 +1,3 @@
-
-# Author(s):  eidanyosoy
-# URL:        https://github.com/benbusby/whoogle-search
-# GNU:        General Public License v3.0
 ################################################################################
 ---
 - hosts: localhost
